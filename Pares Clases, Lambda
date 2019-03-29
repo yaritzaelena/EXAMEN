@@ -1,0 +1,20 @@
+#Hacer una funcion que reciba una lista y obtenga
+# otra lista con los numeros pares. Utilice slicing
+# y funciones lambda.
+class Par(object):
+        def __init__ (self):
+                pass
+        def pares (self, lista):
+                if type (lista) == list:
+                   par = lambda digito : digito%2 == 0
+                   return self.par_aux (lista, par,[])
+                else: return 'Error'
+
+        def par_aux (self, lista, cond, resultado):
+                if lista == []:
+                        return resultado
+                elif cond (lista [0]):
+                        return self.par_aux (lista[1:], cond, resultado + [lista[0]])
+                else: return self.par_aux (lista[1:], cond, resultado)
+#a=Par()
+#a.pares ([2,5,6,4])
