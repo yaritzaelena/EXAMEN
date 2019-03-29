@@ -1,0 +1,59 @@
+#Hacer una funcion que reciba una lista y obtenga
+# otra lista con los numeros pares. Utilice slicing
+# y funciones lambda.
+class Par(object):
+        def __init__ (self):
+                pass
+        def pares (self, lista):
+                if type (lista) == list:
+                   par = lambda digito : digito%2 == 0
+                   return self.par_aux (lista, par,[])
+                else: return 'Error'
+
+        def par_aux (self, lista, cond, resultado):
+                if lista == []:
+                        return resultado
+                elif cond (lista [0]):
+                        return self.par_aux (lista[1:], cond, resultado + [lista[0]])
+                else: return self.par_aux (lista[1:], cond, resultado)
+#a=Par()
+#a.pares ([2,5,6,4])
+
+## Hacer una funcion que reciba una lista, con listas anidadas, y obtenga
+# otra con los numeros pares, Use slicign
+class Parx(object):
+        def __init__ (self):
+                pass
+        def paresx (self, lista1):
+                if type (lista1) == list:
+                   pares = lambda digitoo : digitoo%2 == 0
+                   return self.par_au (lista1, pares,[])
+                else: return 'Error'
+
+        def par_au (self, lista1, condicion, result):
+                if lista1 == []:
+                        return result
+                if type (lista1 [0]) == list:
+                        return self.par_au (lista1[0]+lista1[1:], condicion, result)
+                elif condicion (lista1[0]):
+                        return self.par_au (lista1[1:], condicion, result + [lista1[0]])
+                else: return self.par_au (lista1[1:], condicion, result)
+lista1 = [5,[6,[7,8],9,10],11]
+b=Parx()
+print (b.paresx (lista1))
+
+class Recorrido (object):
+        def __init__  (self):
+                pass
+        def recorrer (self, lista2):
+                if type (lista2)== list:
+                        return self.recorrer_aux (lista2, 0,0)
+                else: return 'Error'
+        def recorrer_aux (self, lista2, resultado, indice):
+                if indice == len (lista2):
+                        return resultado
+                else:return self.recorrer_aux (lista2, resultado + lista2[indice], indice +1)
+      
+lista2 = [5,6,[7,8],9,10],11] # NO TIENE QUE SER LISTA DENTRO DE LISTA
+r = Recorrido ()
+print (r.recorrer (lista2))
