@@ -1,0 +1,33 @@
+# Dada una matriz n*n, sumar los valores de su diagonal.
+# Utilice recursion de cola e indices.
+# Crear clase y funcion de validacion.
+
+class Matriz (object):
+    def __init__ (self):
+        pass
+    def diagonal (self, matriz):
+        if type (matriz) == list:
+            return self.diagonal_aux(0, 0, matriz)
+        else: return 'Error'
+
+    def diagonal_aux (self, indice, resultado, matriz):
+        if indice == len (matriz):
+            return resultado
+        else: return self.diagonal_aux(indice+1, resultado + matriz[indice][indice], matriz)
+        
+##################################################################
+#Sumal
+        
+class matriz (object):
+    def __init__ (self):
+        pass
+    def diagonalinvertido (self, m1):
+        if type (m1) == list:
+            return self.antidiagonal(m1, (len(m1)-1), 0 )
+        else:return 'Error'
+
+    def antidiagonal(self, m1, indicee, result):
+        if indicee == -1:
+            return result
+        else: return self.antidiagonal(m1, indicee-1, result + m1[indicee][-(indicee+1)])
+            
