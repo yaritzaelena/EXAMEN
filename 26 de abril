@@ -1,0 +1,37 @@
+#Suma los valores de una matriz y sacar el promedio.
+
+class Suma (object):
+    def __init__(self):
+        pass
+    def sumatoriaa (self, matriz):
+        if type (matriz) == list:
+            return (self.sumatoria_aux (matriz, 0,0,0)/(len(matriz)*len (matriz[0])))
+        else: return 'Error'
+    def sumatoria_aux (self, matriz, f, c, resultado):
+        if f == len (matriz):
+            return resultado
+        elif c == len (matriz[0]):
+            return self.sumatoria_aux (matriz, f+1, 0, resultado)
+        else: return self.sumatoria_aux (matriz, f, c+1, resultado + matriz [f][c])
+
+# Hacer que una matriz quede con asteriscos alrededos y ceros en el medio
+#pasar la lista con cero
+
+class Cambiar (object):
+    def __init__ (self):
+        pass
+    def cambiaar (self,matriz):
+        if type (matriz) == list:
+            return self.cambiar_aux (matriz, 0, 0)
+        else: return 'Error'
+    def cambiar_aux (self, matriz, f, c):
+        if f == len (matriz[0]):
+            return matriz
+        elif c == len(matriz[0]):
+            return (self.cambiar_aux(matriz, f+1, 0))
+        elif (f == 0 or f == (len (matriz)-1)) or c == 0 or c == (len (matriz[0])-1):
+              matriz [f][c] = '*'
+              return (self.cambiar_aux (matriz, f, c+1))
+        else: return (self.cambiar_aux (matriz, f+1, c))
+            
+        
