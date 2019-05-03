@@ -1,0 +1,42 @@
+#Escribir una funcion que utiliza recursion de cola
+#Invertir una lista de valores ordenados
+#No se puede utilizar una lista adicional ni crear otra lista nueva.
+
+class Invertir (object):
+    def __init__ (self):
+        pass
+    def invertir (self, lista):
+        if type (lista) == list and len (lista) % 2== 0:
+            return self.invertir_aux(lista, 0, len(lista)-1)
+        else:return 'Error'
+
+    def invertir_aux (self, lista, i, j):
+        if i > j:
+            return lista 
+        else:
+           
+            lista[i],lista[j] = lista[j],lista[i]
+            
+            return self.invertir_aux (lista, i+1, j-1)
+        
+# Forma con una variable
+# def invertir_aux (self, lista, inicio ):
+        #if inicio  == len(lista)//2:
+            #return lista 
+        #else:
+            #lista[-(inicio+1)],lista[inicio] = lista[inicio],lista[-(inicio+1)]
+            
+            #return self.invertir_aux (lista, inicio +1)
+class Magia (object):
+    def __init__ (self):
+        pass
+    def magia(self, matriz):
+        if type (matriz) == list:
+            return self.buscar(1, matriz, 0, 0)
+        else: return 'Error'
+    def buscar (self,num, matriz, f, c)
+         if  :
+             True
+         elif matriz [f][c] < len (matriz)* len(matriz):
+             return 
+        
