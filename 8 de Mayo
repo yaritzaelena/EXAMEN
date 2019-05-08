@@ -1,0 +1,41 @@
+class Fig:
+    def __init__ (self,x,y):
+        self.__x = x
+        self.__y = y
+    def getX(self):
+        return self.__x
+    def setX (self, x):
+        if x >= 0 and x <= 1023:
+            self.__x = x
+        else: print ('El valor de x debe ser mayor a 0 y menor que 1023')
+    def getY(self):
+        return self.__y
+    def setY (self, y):
+        if y >= 0 and y <= 767:
+            self.__y = y
+        else: print ('El valor debe ser mayor que 0 y menor que 767')
+
+import math
+from FiguraInicial import Fig
+class Cuadrado(Fig):
+    def __init__ (self, x,y, lado):
+        super() .__init__ (x,y)
+        self.__lado = lado
+    def getRadio (self):
+        return self.__radio
+    def setRadio (self, r):
+        self.__radio = r
+    def calcularArea (self):
+        return math.pi * (self.__radio**2)
+from CuadradoInicial import Cuadrado
+class Rectangulo(Fig):
+    def __init__ (self, x,y, lado, ancho):
+        super() .__init__ (x,y, lado)
+        self.__ancho = ancho
+    def getAncho(self):
+        return self.__ancho
+    def setAncho (self, r):
+        self.__ancho = ancho
+    def calcularArea (self):
+        return super().getLado * (self.__ancho)
+
