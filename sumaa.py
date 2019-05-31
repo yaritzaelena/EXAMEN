@@ -98,4 +98,40 @@ class Diagonal (object):
         anti_diagonal = []
         for fila in range (filas):
             anti_diagonal += [matriz[fila][-(fila+1)]]
-        return anti_diagonal 
+        return anti_diagonal
+
+#Dibuejar * en el borde de la matriz
+
+class Dibujar(object):
+    def __init__(self):
+        pass
+    def dibujar (self, lista):
+        if type (lista)== list:
+            return self.dibujar_aux(lista)
+        else: return 'Error'
+    def dibujar_aux(self, lista):
+        for fila in range (len(lista)):                
+            for columna in range (len(lista)):
+                if fila == 0 or fila == (len(lista)-1):
+                    print('*', end= ' ')
+                if columna == 0 or columna == (len(lista[0])-1):
+                    print('*', end= ' ')
+                else: print(' ', end= ' ')
+                    
+            print('')
+
+class Triangulo(object):
+    def __init__(self):
+        pass
+    def triangulo(self, base):
+        if type (base) == int:
+            return self.triangulo_aux(base)
+        else: return 'Error'
+    def triangulo_aux(self, base):
+        mitad = (base*2)-1
+        
+        derecha = (mitad // 2)
+        izquierda = (mitad // 2)
+        for fila in range (0, mitad, 2):
+            for columna in range (mitad)
+                if fila == 0 and columna == derecha:
